@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #ffffff; color: #000000; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f4f4f5; }
+::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+
+.btn-primary {
+  @apply bg-[#FFB800] hover:bg-[#FFC52E] text-black font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-sm active:translate-y-0 disabled:opacity-50 disabled:hover:translate-y-0 disabled:cursor-not-allowed;
+}
+.btn-outline {
+  @apply border border-zinc-300 hover:border-black text-black font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-zinc-50 active:translate-y-0;
+}
+.card {
+  @apply bg-white border border-zinc-200 rounded-2xl shadow-sm transition-all duration-200;
+}
+.input-field {
+  @apply w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-black placeholder-zinc-400 focus:outline-none focus:border-[#FFB800] focus:ring-2 focus:ring-[#FFB800]/20 transition-all;
+}
+
+/* 3D Floating Animations & Perspective Effects */
+@keyframes float3DEven {
+  0%, 100% {
+    transform: translateY(-14px) rotateX(8deg) rotateY(-10deg) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(14px) rotateX(-6deg) rotateY(8deg) rotate(-2deg);
+  }
+}
+
+@keyframes float3DOdd {
+  0%, 100% {
+    transform: translateY(16px) rotateX(-8deg) rotateY(10deg) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(6deg) rotateY(-8deg) rotate(2deg);
+  }
+}
+
+.animate-float-3d-even {
+  animation: float3DEven 5.5s ease-in-out infinite;
+}
+
+.animate-float-3d-odd {
+  animation: float3DOdd 6.5s ease-in-out infinite 0.7s;
+}
+
+.perspective-1000 {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
